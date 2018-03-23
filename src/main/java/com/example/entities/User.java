@@ -1,23 +1,20 @@
 package com.example.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class User {
 	@Id
-	@GeneratedValue
-	private Long id;
+	private String mobileNumber;
 	private String fullName;
 	private String password;
 	private String confirmPassword;
 	private String email;
-	private String mobileNumber;
 	private String address;
 	public User() {
 	}
-	public User(String fullName, String userName, String password, String confirmPassword, String email,
+	public User(String fullName, String password, String confirmPassword, String email,
 			String mobileNumber, String address) {
 		this.fullName = fullName;
 		this.password = password;
@@ -25,12 +22,6 @@ public class User {
 		this.email = email;
 		this.mobileNumber = mobileNumber;
 		this.address = address;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 	public String getFullName() {
 		return fullName;
@@ -68,5 +59,11 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	@Override
+	public String toString() {
+		return "User [mobileNumber=" + mobileNumber + ", fullName=" + fullName + ", password=" + password
+				+ ", confirmPassword=" + confirmPassword + ", email=" + email + ", address=" + address + "]";
+	}
+	
 	
 }

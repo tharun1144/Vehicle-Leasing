@@ -10,7 +10,7 @@ import com.example.repositories.UserRepository;
 public class UserService {
     @Autowired
     UserRepository userRepository;
-
+    
     public void addUser(User user) {
     	userRepository.save(user);
 	}
